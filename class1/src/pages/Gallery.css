@@ -1,0 +1,18 @@
+.galler-container {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* scroll container box */
+.scroll-container {
+    overflow: hidden;
+    padding: 40px;
+}
+.scroll-track {
+    display: flex;
+    width: max-content; /*안에있는 컨텐츠만큼만*/
+    gap: 30px;
+    animation: leftScroll 40s linear infinite;
+    /* 호버때는 멈추게 만들 수 있다 */
+    animation-play-state: running; 
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "src": "/images/img1.jpg",
+        "title": "호수 위 은하수",
+        "description": "푸른빛의 사진입니다"
+    },
+    {
+        "src": "/images/img2.jpg",
+        "title": "언덕 위 은하수",
+        "description": "따뜻한 느낌의 사진입니다"
+    },
+    {
+        "src": "/images/img3.jpg",
+        "title": "별똥별",
+        "description": "보라빛의 사진입니다"
+    }
+]
