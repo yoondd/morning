@@ -1,0 +1,60 @@
+html, body {
+    background-color: #f1f1f1;
+}
+.guest-container {
+    width: 700px;
+    margin: 50px auto;
+    max-width: 95%;
+}
+
+.sub-title {
+    font-size: 50px;
+    margin: 40px 0 20px;
+    color: #000;
+    transform: none;
+    opacity: 1;
+    padding-top: 50px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    box-shadow: 5px 10px 30px rgba(200,200,200,0.2);
+
+}
+.form * {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #eee;
+}
+
+.message {
+    border: 1px solid #eee;
+    margin-top: 50px;
+    padding: 0 20px;
+    background-color: #fff;
+    height: 450px;
+    overflow-y: scroll;
+    margin-bottom: 30px;
+    box-shadow: 5px 10px 30px rgba(200,200,200,0.2);
+}
+dl {
+    padding: 10px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+dt {
+    font-weight: 700;
+}
+dt span {
+    margin-left: 10px;
+    color: #aaa;
+}
+dd {
+    margin: 0;
+    margin-top: 5px;
+    color: #777;
+}
