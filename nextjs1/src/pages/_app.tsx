@@ -1,7 +1,7 @@
 import "@/styles/globals.scss";
 //타입스크립트때문에 type이라는 명령어가 붙는데, 이리 선언하면 나중에 얘를 안쓸때 컴파일을 안하고 넘어간다
 import type { AppProps } from "next/app";
-import NavBar from "@/com/NavBar";
+import NavBar from "@/components/NavBar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (<>
