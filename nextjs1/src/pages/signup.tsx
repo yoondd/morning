@@ -15,7 +15,7 @@ const Signup = () => {
     //팝업창이 뜨고 닫으면 홈으로 갔으면 좋겠다
     const router = useRouter(); // 훅이라서 다른 변수에 한번 튕겨줘야한다
 
-    const fsum = async(e: React.FormEvent) => {
+    const formSubmit = async(e: React.FormEvent) => {
         //폼의 이벤트 방지
         e.preventDefault();
 
@@ -48,7 +48,30 @@ const Signup = () => {
 
 
     return (
-        <div>
+        <div clasName={styles.container}>
+
+            {/*팝업의 배경이 될 영역*/}
+            <div className={styles.bg}></div>
+
+            {/*실제 회원가입 팝업*/}
+            <div className={styles.signup}>
+                {/*누르면 루트로 가라*/}
+                <button className={styles.close} onClick={()=> router.push('/'); }>X</button>
+
+                <h2>Sign Up</h2>
+
+                <form onSubmit={formSubmit}>
+                    <input type="text" placeholder="name" value={name} onChange={ e => setName(e.target.value) } />
+                    <input type="password" placeholder="password" value={password} onChange={ e => setPassword(e.target.value) } />
+                    <input type="email" placeholder="email" value={email} onChange={ e => setEmail(e.target.value) } />
+                    <button type="submit">SEND</button>
+                </form>
+                {
+                    //메시지가 나올 공간 - 메시지가 있을때만 나와야한다.
+                    message && <h3 className={styles.message}>{message}</h3>
+                }
+
+            </div>
 
         </div>
     );
