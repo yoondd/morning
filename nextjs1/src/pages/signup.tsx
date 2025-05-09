@@ -20,22 +20,24 @@ const Signup = () => {
         e.preventDefault();
 
         try {
+
+
             //보내는 작업에 대한 fetch  server파일찾아가야하는거다. 그래서 /api/signup
             const res = await fetch('/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify([email, password, name])
+                body: JSON.stringify({email, password, name})
             })
             const data = await res.json();
 
             //회원가입이 성공했을 때, 제어
             if(res.ok) {
-                setMessage('회원이 되셨습니다. 환영합니다. 로그인하세요. ');
+                setMessage('Sign Up Successful!');
                 setEmail('');
                 setPassword('');
                 setName('');
             }else{
-                setMessage(data.error || '오류 발생: 회원가입에 실패했습니다.');
+                setMessage(data.error || 'Failed to submit!');
             }
 
             //회원가입이 실패했을 때, 제어
@@ -48,15 +50,16 @@ const Signup = () => {
 
 
     return (
-        <div clasName={styles.container}>
+        <div className={styles.container}>
 
             {/*팝업의 배경이 될 영역*/}
             <div className={styles.bg}></div>
 
             {/*실제 회원가입 팝업*/}
             <div className={styles.signup}>
+
                 {/*누르면 루트로 가라*/}
-                <button className={styles.close} onClick={()=> router.push('/'); }>X</button>
+                <button className={styles.close} onClick={()=> router.push('/') }>X</button>
 
                 <h2>Sign Up</h2>
 
