@@ -7,7 +7,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
 import { parse } from 'cookie'; //쿠키한테 있는걸 나한테 받아오는애. 우리정보를 쿠키에게 주는 시리얼라이즈랑 반대
 
-const meFunc = async (req: NextApiRequest, res: NextApiResponse) => {
+const meFunc = (req: NextApiRequest, res: NextApiResponse) => {
     // 쿠키내에 토큰이 있고, 토큱에는 나의 많은 정보가 있다. 먼저 그 정보를 알아야겠다
     const cookies = parse(req.headers.cookie || ''); //undefined의 경우에는 ''로 처리하겠다
     const token = cookies.token;

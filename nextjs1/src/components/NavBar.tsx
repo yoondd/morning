@@ -3,6 +3,9 @@ import Link from 'next/link';
 //sass 파일 모듈화 시키기
 import styles from '@/styles/NavBar.module.scss';
 import { useRouter } from 'next/router';
+import { FaUserPlus } from "react-icons/fa6";
+import { IoMdLogIn } from "react-icons/io";
+import { IoMdLogOut } from "react-icons/io";
 
 function NavBar(props) {
 
@@ -30,6 +33,12 @@ function NavBar(props) {
         }
     },[router.events]); // 공배열로두면 최초에만 한번이니까, 다른 페이지로 이동할때마다 반복하라고 세팅해야겠어
 
+    const Logout = async () => {
+        //fetch들어가려면 async써야해
+        await fetch("/api/logout"); //핵심~~
+        setLoggedIn(false);
+        router.push("/");
+    }
 
     return (
         <div className={styles.navbar}>
@@ -50,12 +59,20 @@ function NavBar(props) {
                     <Link href="/map">Map</Link>
                 </li>
 
-                <li>
-                    <Link href="/signup">Sign up</Link>
-                </li>
-                <li>
-                    <Link href="/login">Login</Link>
-                </li>
+                {
+                    isLoggedIn ? (
+                        //나의회원이다 = 로그인이되었다
+                        <li><button onClick={Logout} className={styles.logout}>Logout</button></li>
+                    ) : (
+                        //로그인이 안되었다
+                        <>
+                        <li><Link href="/signup"><FaUserPlus /> Sign up</Link></li>
+                        <li><Link href="/login"><IoMdLogIn /> Login</Link></li>
+                        </>
+                    )
+                }
+
+
             </ul>
         </div>
     );

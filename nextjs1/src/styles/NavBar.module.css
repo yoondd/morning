@@ -24,10 +24,13 @@
   list-style: none;
   padding: 0;
 }
-.navbar .menu li a {
+.navbar .menu li a, .navbar .menu li button {
   text-decoration: none;
   color: #212121;
   font-weight: 500;
+  border: 0;
+  background: transparent;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=NavBar.module.css.map */
