@@ -13,7 +13,7 @@
   height: 100%;
   z-index: 500;
 }
-.container .signup {
+.container .login {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -25,7 +25,7 @@
   text-align: center;
   background-color: #fff;
 }
-.container .signup .close {
+.container .login .close {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -34,17 +34,17 @@
   color: #212121;
   border: 0;
 }
-.container .signup h2 {
+.container .login h2 {
   color: #212121;
   font-size: 2rem;
   margin-bottom: 40px;
 }
-.container .signup form {
+.container .login form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.container .signup form input {
+.container .login form input {
   border: 1px solid #eee;
   padding: 8px 15px;
   margin-bottom: 10px;
@@ -54,7 +54,7 @@
   background: #fff;
   color: #111;
 }
-.container .signup form button {
+.container .login form button {
   background: #F16B6F;
   color: #fff;
   padding: 12px 15px;
@@ -65,12 +65,12 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.container .signup form button:hover {
+.container .login form button:hover {
   background: #cc4145;
 }
-.container .signup .message {
+.container .login .message {
   margin-top: 15px;
   color: red;
 }
 
-/*# sourceMappingURL=Signup.module.css.map */
+/*# sourceMappingURL=Login.module.css.map */
