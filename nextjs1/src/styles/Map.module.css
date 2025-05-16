@@ -1,0 +1,64 @@
+.mapbox {
+  padding-top: 130px;
+  background: #fff;
+  min-height: 100vh;
+}
+.mapbox h2 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.mapbox .btns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.mapbox .btns button {
+  padding: 8px 15px 6px;
+  border-radius: 20px;
+  background: #eee;
+  text-align: center;
+  border: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.mapbox .btns button::before {
+  content: "#";
+  display: inline-block;
+  margin-right: 5px;
+}
+.mapbox .btns button:hover {
+  background: #F16B6F;
+  color: #fff;
+}
+.mapbox .search {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.mapbox .search input {
+  padding: 12px 15px;
+  width: 500px;
+  border: 1px solid #eee;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+}
+.mapbox .search button {
+  background: #F16B6F;
+  color: #fff;
+  padding: 12px 25px 12px 20px;
+  border-radius: 0 30px 30px 0;
+  border: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.mapbox .search button:hover {
+  background: #cc4145;
+}
+.mapbox .map {
+  width: 100%;
+  height: 550px;
+}
+
+/*# sourceMappingURL=Map.module.css.map */

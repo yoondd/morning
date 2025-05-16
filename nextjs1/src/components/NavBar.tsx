@@ -3,9 +3,6 @@ import Link from 'next/link';
 //sass 파일 모듈화 시키기
 import styles from '@/styles/NavBar.module.scss';
 import { useRouter } from 'next/router';
-import { FaUserPlus } from "react-icons/fa6";
-import { IoMdLogIn } from "react-icons/io";
-import { IoMdLogOut } from "react-icons/io";
 
 function NavBar(props) {
 
@@ -66,8 +63,8 @@ function NavBar(props) {
                     ) : (
                         //로그인이 안되었다
                         <>
-                        <li><Link href="/signup"><FaUserPlus /> Sign up</Link></li>
-                        <li><Link href="/login"><IoMdLogIn /> Login</Link></li>
+                        <li><Link href="/signup">Sign up</Link></li>
+                        <li><Link href="/login">Login</Link></li>
                         </>
                     )
                 }
