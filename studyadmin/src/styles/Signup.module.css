@@ -1,3 +1,80 @@
-
+.signupContainer .signup {
+  width: 600px;
+  margin: 100px auto;
+  max-width: 95%;
+}
+.signupContainer .signup h2 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+.signupContainer .signup h2::before {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-150%);
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: rgba(13, 154, 78, 0.0666666667);
+  border-radius: 50%;
+  animation: blink 0.8s infinite alternate linear;
+}
+@keyframes blink {
+  0% {
+    transform: translateX(-150%) scale(0.5);
+  }
+}
+.signupContainer .signup .alarmbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.signupContainer .signup .alarmbox button {
+  background: #0D9A4E;
+  border: 1px solid #0D9A4E;
+  color: #fff;
+  padding: 6px 0;
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.signupContainer .signup .signupForm .fieldGroup {
+  padding: 20px 0;
+}
+.signupContainer .signup .signupForm .fieldGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.signupContainer .signup .signupForm .fieldGroup label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #0D9A4E;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 6px;
+}
+.signupContainer .signup .signupForm .fieldGroup input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 17px;
+  color: #555;
+}
 
 /*# sourceMappingURL=Signup.module.css.map */
