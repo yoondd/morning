@@ -14,7 +14,7 @@ const Signup = () => {
         gender: '',
         address: ''
     });
-    const formChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+    const formChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>{
         //change가 일어날때마다 무얼해달라는 요청을 해야한다.
         const { name, value } = e.target;
         setForm({...form, [name]: value});
@@ -53,15 +53,17 @@ const Signup = () => {
                                 }
                             }
                         />
+                        <p className={styles.alert}>※ 아이디는 4글자 이상이며 영어를 포함해야합니다</p>
                     </div>
+
                     <div className={styles.fieldGroup}>
                         <label htmlFor="">PASSWORD</label>
                         <input
-                            type="password" name="password" onChange={formChange} ref={userpwRef}
+                            type="password" name="password" value={form.password} onChange={formChange} ref={userpwRef}
                             // 특수기호를 반드시포함해라.
                             onBlur={
                                 () => {
-                                    const passwordRef =  /^(?=.*[a-zA-Z*.#$])[a-zA-Z0-9]{4,}$/;
+                                    const passwordRef =  /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+])[a-zA-Z0-9!@#$%^&*()_+]{4,}$/;
                                     if(!passwordRef.test(form.password)) {
                                         setMessage("규칙오류: 패스워드는 4글자 이상이며 영어, 특수문자를 포함해야합니다");
 
@@ -73,6 +75,37 @@ const Signup = () => {
                                 }
                             }
                         />
+                        <p className={styles.alert}>※ 패스워드는 4글자 이상이며 영어, 특수문자를 포함해야합니다</p>
+                    </div>
+                    <div className={styles.fieldGroup}>
+                        <label htmlFor="">PASSWORD Check</label>
+                        <input
+                            type="password" name="checkPassword" value={form.checkPassword} onChange={formChange}
+                            onBlur={
+                                () => {
+                                    if ( form.checkPassword !== form.password ) {
+                                        setMessage("비밀번호가 일치하지 않습니다");
+                                    }else {
+                                        setMessage("");
+                                    }
+                                }
+                            }
+                        />
+                        <p className={styles.alert}>※ 패스워드를 한번 더 확인해주세요</p>
+                    </div>
+                    <div className={styles.fieldGroup}>
+                        <label htmlFor="">E-mail</label>
+                        <input
+                            type="email" name="email" value={form.email} onChange={formChange}
+                        />
+                    </div>
+                    <div className={styles.fieldGroup}>
+                        <label htmlFor="">Gender</label>
+                        <select name="gender" value={form.gender} onChange={formChange}>
+                            <option value="">성별 선택</option>
+                            <option value="m">남자</option>
+                            <option value="f">여자</option>
+                        </select>
                     </div>
                 </form>
             </div>
